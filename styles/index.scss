@@ -1,0 +1,24 @@
+.navbar {
+	height: 80px;
+}
+
+.navbar-brand {
+	font-size: 30px;
+	font-weight: bold;
+}
+
+.base-page {
+	padding-top: 100px;
+	padding-bottom: 200px;
+}
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+
+body {
+	min-height: 100vh;
+	position: relative;
+	margin: 0;
+}
