@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { getCocktails, getAlcohol } from '../actions/index';
 import SideMenu from '../components/sideMenu';
-import Carousel from '../components/carousel';
+import Pagination from '../components/pagination';
 import CocktailList from '../components/cocktailList';
 
 const Home = (props) => {
 	const { images, alcohol, cocktails } = props;
 	const [ filter, setFilter ] = useState('All');
+	const [ currentPage, setCurrentPage ] = useState(1);
+	const [ cocktailsPerPage, setCocktailsPerPage ] = useState(21);
+
 	const changeCategory = (category) => {
 		setFilter(category);
 	};
@@ -28,25 +31,39 @@ const Home = (props) => {
 			);
 		});
 	};
+
+	//get current page
+
+	const indexOfLastCocktail = currentPage * cocktailsPerPage;
+	const indexofFirstCocktail = indexOfLastCocktail - cocktailsPerPage;
+	const currentCocktails = cocktails.slice(indexofFirstCocktail, indexOfLastCocktail);
+	const paginate = (pageNumber) => setCurrentPage(pageNumber);
+	
 	return (
 		<div>
 			<div className="home-page">
+				<div className="banner" />
+				{/* <Carousel images={images} /> */}
 				<div className="container">
 					<div className="row">
-						<div className="col-lg-3">
-							<SideMenu
-								activeCategory={filter}
-								changeCategory={changeCategory}
-								alcohol={alcohol}
-								appName={'International Cocktails'}
-							/>
-						</div>
-						<div className="col-lg-9">
-							<Carousel images={images} />
-							<h1>Displaying {filter} Cocktails </h1>
+						<div className="col-lg-12">
+							<div>
+								<SideMenu
+									activeCategory={filter}
+									changeCategory={changeCategory}
+									alcohol={alcohol}
+									appName={'Filter'}
+								/>
+								<h1>Displaying {filter} Cocktails </h1>
+							</div>
 							<div className="row">
 								<CocktailList cocktails={filterCocktails(cocktails) || []} />
 							</div>
+							 {/* <Pagination
+								cocktailsPerPage={cocktailsPerPage}
+								totalCocktails={cocktails.length}
+								paginate={paginate}
+							/>  */}
 						</div>
 					</div>
 				</div>
@@ -57,15 +74,15 @@ const Home = (props) => {
 Home.getInitialProps = async () => {
 	const cocktails = await getCocktails();
 	const alcohol = await getAlcohol();
-	const images = cocktails.map((cocktail) => ({
-		id: `image-${cocktail.idDrink}`,
-		imageUrl: cocktail.strDrinkThumb,
-		title: cocktail.strDrink
-	}));
+	// const images = cocktails.map((cocktail) => ({
+	// 	id: `image-${cocktail.idDrink}`,
+	// 	imageUrl: cocktail.strDrinkThumb,
+	// 	title: cocktail.strDrink
+	// }));
 
 	return {
 		cocktails,
-		images,
+		// images,
 		alcohol
 	};
 };

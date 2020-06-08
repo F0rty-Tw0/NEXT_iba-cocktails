@@ -1,4 +1,5 @@
 import React from 'react';
+
 class Modal extends React.Component {
 	constructor(props) {
 		super(props);
@@ -16,10 +17,9 @@ class Modal extends React.Component {
 	render() {
 		return (
 			<div>
-				<button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-					Create your own Cocktail
-				</button>
-
+				<a className="pure-menu-link" data-toggle="modal" data-target="#exampleModalCenter">
+					Add your Cocktail
+				</a>
 				<div
 					className="modal fade"
 					id="exampleModalCenter"
@@ -49,14 +49,21 @@ class Modal extends React.Component {
 									Close
 								</button>
 								{this.props.hasSubmit && (
-									<button onClick={this.submitModal} type="button" className="btn btn-primary">
+									<a onClick={this.submitModal} className="btn btn-primary">
 										Save changes
-									</button>
+									</a>
 								)}
 							</div>
 						</div>
 					</div>
 				</div>
+				<style jsx>
+					{`
+						a {
+							cursor: pointer;
+						}
+					`}
+				</style>
 			</div>
 		);
 	}

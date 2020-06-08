@@ -4,6 +4,8 @@ import Head from 'next/head';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
 import '../styles/index.scss';
+import '../testing/pure.css';
+
 class CocktailApp extends App {
 	static async getInitalProps(appContenxt) {
 		// Executing getInitalProps of page you are navigated to
@@ -13,11 +15,14 @@ class CocktailApp extends App {
 
 	// Component holds page we are navigating to
 	render() {
-		const { Component, pageProps } = this.props;
+		const { Component, pageProps,  } = this.props;
 		return (
 			<div>
 				<Head>
-					<title>Home</title>
+					<title>Pricing Table &ndash; Layout Examples &ndash; Pure</title>
+					<meta charSet="utf-8" />
+					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					<meta name="description" content="A layout example that shows off a responsive pricing table." />				
 					<link
 						rel="stylesheet"
 						href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"

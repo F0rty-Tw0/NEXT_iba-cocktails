@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import '../styles/cards.scss';
 
 class CocktailList extends React.Component {
 	// shorten = (text) => {
@@ -8,22 +9,22 @@ class CocktailList extends React.Component {
 	// 	}
 	// 	return text;
 	// };
+
 	renderCocktails() {
 		const { cocktails } = this.props;
+
 		return cocktails.map((cocktail) => (
-			<div key={cocktail.idDrink} className="col-lg-4 col-md-6 mb-4">
-				<div className="card h-100">
+			<div key={cocktail.idDrink} className="col-xl-4 col-lg-6 col-md-6 mb-4">
+				{/* <div className="card">
 					<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
 						<a>
 							<img className="card-img-top" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
 						</a>
 					</Link>
 					<div className="card-body">
-						<h4 className="card-title">
-							<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
-								<a>{cocktail.strDrink}</a>
-							</Link>
-						</h4>
+						<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
+							<h4 className="card-title text-center mb-3">{cocktail.strDrink}</h4>
+						</Link>
 						<ul>
 							<li className="text-muted">{cocktail.strIngredient1}</li>
 							<li className="text-muted">{cocktail.strIngredient2}</li>
@@ -31,6 +32,32 @@ class CocktailList extends React.Component {
 					</div>
 					<div className="card-footer">
 						<small className="text-muted">{cocktail.strTags}</small>
+					</div>
+				</div> */}
+
+				<div className="card border-0">
+					<div className="card__side card__side--front">
+						<div className="card__title">
+							<h4 className="card__heading">{cocktail.strDrink}</h4>
+						</div>
+
+						<img className="img-fluid" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+					</div>
+					<div className="card__side card__side--back">
+						<div className="background" />
+						<img className="img-fluid" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
+						<div className="card__cta">
+							<div className="card__list-box">
+								<p className="card__list-only">{cocktail.strIngredient1}</p>
+								<p className="card__list-only">{cocktail.strIngredient2}</p>
+								<p className="card__list-only">{cocktail.strIngredient3}</p>
+							</div>
+							<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
+								<a href="#popup" className="btn btn--white">
+									View
+								</a>
+							</Link>
+						</div>
 					</div>
 				</div>
 			</div>
