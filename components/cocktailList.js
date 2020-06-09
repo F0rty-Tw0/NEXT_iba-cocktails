@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import '../styles/cards.scss';
 
 class CocktailList extends React.Component {
 	// shorten = (text) => {

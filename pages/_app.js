@@ -3,8 +3,9 @@ import { Component } from 'react';
 import Head from 'next/head';
 import Footer from '../components/footer';
 import Navbar from '../components/navbar';
-import '../styles/index.scss';
-import '../testing/pure.css';
+import '../styles/index.css';
+import pure from  '../testing/pure.css';
+import cards from '../styles/cards.css';
 
 class CocktailApp extends App {
 	static async getInitalProps(appContenxt) {
@@ -19,10 +20,10 @@ class CocktailApp extends App {
 		return (
 			<div>
 				<Head>
-					<title>Pricing Table &ndash; Layout Examples &ndash; Pure</title>
+					<title>Cocktails App</title>
 					<meta charSet="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<meta name="description" content="A layout example that shows off a responsive pricing table." />				
+					<meta name="description" content="A cocktail recipes page" />				
 					<link
 						rel="stylesheet"
 						href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
