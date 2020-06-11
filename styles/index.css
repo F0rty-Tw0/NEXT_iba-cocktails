@@ -6,6 +6,7 @@ body {
 	min-height: 100vh;
 	position: relative;
 	margin: 0;
+	background-color: #e1e1e1d6;
 }
 
 a:hover {
@@ -33,11 +34,9 @@ body.modal-open[style] {
 	float: right;
 }
 .banner {
-	background: transparent url('https://i.ibb.co/xGC0sgN/cover.jpg') top no-repeat fixed;
-	height: 400px !important;
-
-	background-size: contain;
-
+	background: transparent url('../public/cover.jpg') top no-repeat fixed;
+	height: 450px;
+	background-size: cover;
 	width: 100%;
 	margin-bottom: 1em;
 	display: table;
@@ -58,16 +57,13 @@ body.modal-open[style] {
 	margin: 0;
 }
 .dropleft a,
-
 .dropdown-item {
 	width: auto !important;
 }
 @media screen and (max-width: 1405px) {
 	.banner {
-		background: transparent url('https://i.ibb.co/xGC0sgN/cover.jpg') no-repeat fixed;
-		background-size: contain;
-		width: 100%;
-		height: 300px !important;
+		background: transparent url('../public/cover.jpg') no-repeat fixed;
+		background-size: cover;
 	}
 }
 /*
@@ -76,12 +72,6 @@ body.modal-open[style] {
  * text and add some vertical space between the various pricing tables
  */
 @media screen and (max-width: 767px) {
-	.banner {
-		height: 230px !important;
-	}
-	.pricing-table {
-		margin-bottom: 0;
-	}
 }
 
 /*
@@ -89,7 +79,4 @@ body.modal-open[style] {
  * On phones, we want to reduce the height and font-size of the banner further
  */
 @media screen and (max-width: 480px) {
-	.banner {
-		height: 80px !important;
-	}
 }

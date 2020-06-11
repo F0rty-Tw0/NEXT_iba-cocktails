@@ -8,7 +8,6 @@ class CocktailList extends React.Component {
 	// 	}
 	// 	return text;
 	// };
-
 	renderCocktails() {
 		const { cocktails } = this.props;
 
@@ -37,25 +36,27 @@ class CocktailList extends React.Component {
 				<div className="card border-0">
 					<div className="card__side card__side--front">
 						<div className="card__title">
-							<h4 className="card__heading">{cocktail.strDrink}</h4>
+							<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
+								<a className="card__heading">{cocktail.strDrink}</a>
+							</Link>
 						</div>
 
 						<img className="img-fluid" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
 					</div>
+
 					<div className="card__side card__side--back">
-						<div className="background" />
 						<img className="img-fluid" src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
 						<div className="card__cta">
-							<div className="card__list-box">
+							<div className="card__title">
+								<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
+									<a className="card__heading">{cocktail.strDrink}</a>
+								</Link>
+							</div>
+							<div className="card__list-box font-weight-light">
 								<p className="card__list-only">{cocktail.strIngredient1}</p>
 								<p className="card__list-only">{cocktail.strIngredient2}</p>
 								<p className="card__list-only">{cocktail.strIngredient3}</p>
 							</div>
-							<Link href="/cocktails/[id]" as={`/cocktails/${cocktail.idDrink}`}>
-								<a href="#popup" className="btn btn--white">
-									View
-								</a>
-							</Link>
 						</div>
 					</div>
 				</div>
