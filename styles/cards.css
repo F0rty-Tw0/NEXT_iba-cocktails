@@ -50,8 +50,14 @@
 	height: 30rem;
 	background-color: rgba(0, 0, 0, 0);
 }
-
+.card-img-top {
+	border-radius: 10px;
+}
+.display-4 {
+	margin: 0px;
+}
 .card__side {
+	background-color: #fcfbf7bd;
 	height: 24.5rem;
 	-webkit-transition: all 0.8s ease;
 	transition: all 1s ease;
@@ -62,12 +68,15 @@
 	width: auto;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
-	border-radius: 15px;
+	border-radius: 10px;
 	overflow: hidden;
 	-webkit-box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 	box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
 }
 .card__side--front {
+	background-color: #fcfbf7bd;
+}
+.card__side--front img {
 	filter: brightness(80%);
 	-webkit-filter: brightness(80%);
 	-moz-filter: brightness(80%);
@@ -75,6 +84,7 @@
 	-ms-filter: brightness(80%);
 }
 .card__side--back {
+	z-index: 10;
 	-webkit-transform: rotateY(180deg);
 	transform: rotateY(180deg);
 }
@@ -150,8 +160,29 @@
 
 .card__list-only {
 	font-size: 1.4rem;
-	border-bottom: 1px gray solid;
+	border-bottom: 0.5px rgba(255, 255, 255, 0.226) solid;
 }
+
+.about_header {
+	background: url('../public/cover3.jpg');
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 30%;
+}
+.overlay {
+	width: 100%;
+	height: 100%;
+	padding: 50px;
+	color: #fff;
+	text-shadow: 1px 1px 1px #333;
+	background-image: linear-gradient(135deg, #9f05ff69 10%, #fd5e086b 100%);
+}
+
 @media (hover: hover) and (pointer: fine) {
 	.card:hover .card__side--front {
 		-webkit-transform: rotateY(-180deg);
@@ -163,13 +194,27 @@
 		transform: rotateY(0);
 	}
 }
+
 /* Mini devices (landscape phones, 320px and up) */
 @media (min-width: 320px) {
+	.about_header {
+		border-radius: 0 0 95% 95% / 10% 
+	}
 	.card {
 		height: 23rem;
 	}
 	.card__side {
 		height: 20.5rem;
+	}
+}
+
+/* Mini devices (landscape phones, 445px and up) */
+@media (min-width: 445px) {
+	.card {
+		height: 32rem;
+	}
+	.card__side {
+		height: 30.5rem;
 	}
 }
 
@@ -214,11 +259,14 @@
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.about_header {
+		border-radius: 0 0 95% 95% / 30% 
+	}
 	.card__side {
 		height: 24.5rem;
 	}
 	.card {
-		height: 30rem;
+		height: 27rem;
 	}
 	.card__cta {
 		top: 54%;

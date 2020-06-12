@@ -53,13 +53,14 @@ class CocktailList extends React.Component {
 								</Link>
 							</div>
 							<div className="card__list-box font-weight-light">
-								<p className="card__list-only">{cocktail.strIngredient1}</p>
-								<p className="card__list-only">{cocktail.strIngredient2}</p>
-								<p className="card__list-only">{cocktail.strIngredient3}</p>
+								<p className="card__list-only">	&bull; {cocktail.strIngredient1}</p>
+								<p className="card__list-only">	&bull; {cocktail.strIngredient2}</p>
+								<p className="card__list-only">	&bull; {cocktail.strIngredient3}</p>
 							</div>
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		));
 	}

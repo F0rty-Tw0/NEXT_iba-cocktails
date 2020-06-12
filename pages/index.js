@@ -6,7 +6,7 @@ import CocktailList from '../components/cocktailList';
 
 const Home = (props) => {
 	const { images, alcohol, cocktails } = props;
-	const [ filter, setFilter ] = useState('All');
+	const [ filter, setFilter ] = useState('Light Rum');
 	const [ currentPage, setCurrentPage ] = useState(1);
 	const [ cocktailsPerPage, setCocktailsPerPage ] = useState(21);
 
@@ -38,7 +38,7 @@ const Home = (props) => {
 	const indexofFirstCocktail = indexOfLastCocktail - cocktailsPerPage;
 	const currentCocktails = cocktails.slice(indexofFirstCocktail, indexOfLastCocktail);
 	const paginate = (pageNumber) => setCurrentPage(pageNumber);
-	
+
 	return (
 		<div>
 			<div className="home-page">
@@ -47,19 +47,21 @@ const Home = (props) => {
 				<div className="container">
 					<div className="row">
 						<div className="col-lg-12">
-							<div>
+							<div className="pb-4">
 								<SideMenu
 									activeCategory={filter}
 									changeCategory={changeCategory}
 									alcohol={alcohol}
 									appName={'Filter'}
 								/>
-								<h1>Displaying {filter} Cocktails </h1>
+								<h1 className="card__heading">
+									Displaying <strong>{filter}</strong> Cocktails{' '}
+								</h1>
 							</div>
 							<div className="row">
 								<CocktailList cocktails={filterCocktails(cocktails) || []} />
 							</div>
-							 {/* <Pagination
+							{/* <Pagination
 								cocktailsPerPage={cocktailsPerPage}
 								totalCocktails={cocktails.length}
 								paginate={paginate}
@@ -67,6 +69,13 @@ const Home = (props) => {
 						</div>
 					</div>
 				</div>
+				<style jsx>
+					{`
+						.card__heading {
+							text-align: left;
+						}
+					`}
+				</style>
 			</div>
 		</div>
 	);

@@ -25,6 +25,13 @@ const SideMenu = (props) => {
 						</a>
 					))}
 				</div>
+				<style jsx>
+					{`
+						a {
+							cursor: pointer;
+						}
+					`}
+				</style>
 			</div>
 		</React.Fragment>
 	);

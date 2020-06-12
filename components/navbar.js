@@ -27,7 +27,7 @@ const Navbar = (props) => {
 					<ul className="pure-menu-list">
 						<li className="pure-menu-item">
 						<Link href="/about">
-							<a href="#" className="pure-menu-link">
+							<a className="pure-menu-link">
 								About
 							</a>
 							</Link>

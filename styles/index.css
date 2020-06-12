@@ -6,11 +6,24 @@ body {
 	min-height: 100vh;
 	position: relative;
 	margin: 0;
-	background-color: #e1e1e1d6;
+	background-color: #c5c2b336;
 }
-
+.bakcground {
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	background-image: url("../public/grunge-a094ace9bf.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	opacity: 0.2;
+	z-index: -1 !important;
+}
 a:hover {
 	text-decoration: none;
+	color: black;
 }
 
 body.modal-open {
@@ -19,7 +32,13 @@ body.modal-open {
 body.modal-open[style] {
 	padding-right: 0px !important;
 }
+.dropdown-item.active,
+.dropdown-item:active {
+	background-color: #545b62 !important;
+	color: white !important;
+}
 .pure-menu {
+	background-color: #fcfbf7bd;
 	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.10);
 }
 
