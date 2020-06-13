@@ -33,12 +33,6 @@ body.modal-open[style] {
 	padding-right: 0px !important;
 }
 
-.validated-form__errors {
-	color: red;
-	width: 345px;
-	position: relative;
-	overflow:hidden;
-}
 .dropdown-item.active,
 .dropdown-item:active {
 	background-color: #545b62 !important;
@@ -86,6 +80,18 @@ body.modal-open[style] {
 .dropdown-item {
 	width: auto !important;
 }
+
+/* #strIngredient2 {
+	display: none;
+}
+#strMeasure2 {
+	display: none;
+} */
+
+.hidden {
+	display: none;
+}
+
 @media screen and (max-width: 1405px) {
 	.banner {
 		background: transparent url('../public/cover.jpg') no-repeat fixed;
