@@ -164,13 +164,12 @@
 }
 
 .about_header {
-	background: url('../public/cover3.jpg');
+	background: url('../public/cover.jpg');
 	text-align: center;
 	width: 100%;
 	height: auto;
 	background-size: cover;
 	background-attachment: fixed;
-	position: relative;
 	overflow: hidden;
 	border-radius: 0 0 85% 85% / 30%;
 }
@@ -198,13 +197,23 @@
 /* Mini devices (landscape phones, 320px and up) */
 @media (min-width: 320px) {
 	.about_header {
-		border-radius: 0 0 95% 95% / 10% 
+		border-radius: 0 0 95% 95% / 10%;
 	}
 	.card {
 		height: 23rem;
 	}
 	.card__side {
 		height: 20.5rem;
+	}
+}
+
+/* Mini devices (landscape phones, 375px and up) */
+@media (min-width: 375px) {
+	.card {
+		height: 26rem;
+	}
+	.card__side {
+		height: 24rem;
 	}
 }
 
@@ -260,7 +269,7 @@
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 	.about_header {
-		border-radius: 0 0 95% 95% / 30% 
+		border-radius: 0 0 95% 95% / 30%;
 	}
 	.card__side {
 		height: 24.5rem;

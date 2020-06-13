@@ -271,7 +271,7 @@
   {
     "idDrink": "11019",
     "strDrink": "Alfie Cocktail",
-    "strTags":"IBA, Contemporary",
+    "strTags": "IBA, Contemporary",
     "strGlass": "Cocktail Glass",
     "strInstructions": "Combine and shake all ingredients with ice, strain into a cocktail Glass, and serve.",
     "strInstructionsDE": "Alle Zutaten mit Eis mischen und schütteln, in ein Cocktailglas abseihen und servieren.",
@@ -9810,7 +9810,7 @@
     "strDrinkFR": "Adam",
     "strDrinkZH-HANS": "亚当",
     "strDrinkZH-HANT": "亞當",
-    "strTags":"IBA, Contemporary",
+    "strTags": "IBA, Contemporary",
     "strGlass": "Cocktail Glass",
     "strInstructions": "In a shaker half-filled with ice cubes, combine all of the ingredients. Shake well. Strain into a cocktail Glass.",
     "strInstructionsDE": "In einem Shaker, der halb mit Eiswürfeln gefüllt ist, alle Zutaten vermengen. Gut schütteln. In ein Cocktailglas abseihen.",

@@ -19,9 +19,7 @@ const Cocktail = (props) => {
 				<div className="overlay">
 					<br />
 					<br />
-					<br />
-					<h1 className="lead display-4"> Cocktails App</h1>
-					<br />
+					<h1 className="lead display-4"> {cocktail.strDrink}</h1>
 					<br />
 					<br />
 				</div>
@@ -32,8 +30,8 @@ const Cocktail = (props) => {
 						<div className="col-12 col-lg-6 order-lg-last">
 							<img className="card-img-top " src={cocktail.strDrinkThumb} alt={cocktail.strDrink} />
 						</div>
-						<div className="col-12 col-md-6">
-							<h1 className="display-4 text-center pure-menu-heading">{cocktail.strDrink}</h1>
+						<div className="col-12 col-md-6 pt-3">
+							{/* <h1 className="display-4 text-center">{cocktail.strDrink}</h1> */}				
 							<p className="lead ">
 								{cocktail.strMeasure1} {cocktail.strIngredient1}
 							</p>
