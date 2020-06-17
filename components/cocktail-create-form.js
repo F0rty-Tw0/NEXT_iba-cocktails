@@ -56,11 +56,18 @@ const CocktailCreateForm = (props) => {
 
 	const addMore = (event) => {
 		const clicked = event.target.parentNode.nextElementSibling;
-		clicked.classList.toggle('hidden');
-		clicked.getElementsByTagName('input')[0].setAttribute('required', 'required');
-		clicked.getElementsByTagName('input')[1].setAttribute('required', 'required');
-		clicked.previousSibling.getElementsByTagName('span')[0].classList.toggle('fa-plus')
-		clicked.previousSibling.getElementsByTagName('span')[0].classList.toggle('fa-minus')
+
+		if (clicked.previousSibling.getElementsByTagName('span')[0].classList[4] === 'fa-minus') {
+			clicked.previousSibling.classList.toggle('hidden');
+			clicked.previousSibling.getElementsByTagName('input')[0].removeAttribute('required');
+			clicked.previousSibling.getElementsByTagName('input')[1].removeAttribute('required');
+		} else {
+			clicked.classList.toggle('hidden');
+			clicked.getElementsByTagName('input')[0].setAttribute('required', 'required');
+			clicked.getElementsByTagName('input')[1].setAttribute('required', 'required');
+		}
+		clicked.previousSibling.getElementsByTagName('span')[0].classList.toggle('fa-plus');
+		clicked.previousSibling.getElementsByTagName('span')[0].classList.toggle('fa-minus');
 	};
 
 	const submitForm = (event) => {
@@ -93,8 +100,7 @@ const CocktailCreateForm = (props) => {
 			</div>
 			<div className="form-group" id="a">
 				<label htmlFor="ingredient">Ingredient</label>
-				<span className="addMore float-right fas fa-plus" onClick={addMore}>
-				</span>
+				<span className="addMore float-right fas fa-plus" onClick={addMore} />
 				<input
 					onChange={handleChange}
 					value={form.strIngredient1}
@@ -125,8 +131,7 @@ const CocktailCreateForm = (props) => {
 			</div>
 			<div className="form-group hidden">
 				<label htmlFor="ingredient">Ingredient 2</label>
-				<span className="addMore float-right fas fa-plus" onClick={addMore}>
-				</span>
+				<span className="addMore float-right fas fa-plus" onClick={addMore} />
 				<input
 					onChange={handleChange}
 					value={form.strIngredient2}
@@ -153,8 +158,7 @@ const CocktailCreateForm = (props) => {
 			</div>
 			<div className="form-group hidden">
 				<label htmlFor="ingredient">Ingredient 3</label>
-				<span className="addMore float-right fas fa-plus" onClick={addMore}>
-				</span>
+				<span className="addMore float-right fas fa-plus" onClick={addMore} />
 				<input
 					onChange={handleChange}
 					value={form.strIngredient3}
@@ -183,8 +187,7 @@ const CocktailCreateForm = (props) => {
 			</div>
 			<div className="form-group hidden">
 				<label htmlFor="ingredient">Ingredient 4</label>
-				<span className="addMore float-right fas fa-plus" onClick={addMore}>
-				</span>
+				<span className="addMore float-right fas fa-plus" onClick={addMore} />
 				<input
 					onChange={handleChange}
 					value={form.strIngredient4}
@@ -213,8 +216,7 @@ const CocktailCreateForm = (props) => {
 			</div>
 			<div className="form-group hidden">
 				<label htmlFor="ingredient">Ingredient 5</label>
-				<span className="addMore float-right fas fa-plus" onClick={addMore}>
-				</span>
+				<span className="addMore float-right fas fa-plus" onClick={addMore} />
 				<input
 					onChange={handleChange}
 					value={form.strIngredient5}
@@ -243,8 +245,7 @@ const CocktailCreateForm = (props) => {
 			</div>
 			<div className="form-group hidden">
 				<label htmlFor="ingredient">Ingredient 6</label>
-				<span className="addMore float-right fas fa-plus" onClick={addMore}>
-				</span>
+				<span className="addMore float-right fas fa-plus" onClick={addMore} />
 				<input
 					onChange={handleChange}
 					value={form.strIngredient6}
@@ -334,10 +335,10 @@ const CocktailCreateForm = (props) => {
 					onChange={handleChange}
 					name="strDrinkThumb"
 					value={form.strDrinkThumb}
-					type="text"
+					type="url"
 					className="form-control"
 					id="strDrinkThumb"
-					placeholder="Link with a picture of your cocktail"
+					placeholder="https://example.com/your_image.jpg"
 					required
 				/>
 			</div>
@@ -375,6 +376,7 @@ const CocktailCreateForm = (props) => {
 					}
 					.addMore {
 						cursor: pointer;
+						color: green;
 					}
 				`}
 			</style>
